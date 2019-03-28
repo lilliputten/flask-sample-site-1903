@@ -24,7 +24,7 @@
     "install-python-requirements": "npm-run-all venv-init install-requirements",
     "postinstall": "echo --Run postinstall tasks-- && npm-run-all install-python-requirements",
     "[python]": "Python commands...",
-    "install-requirements": "pip install -r requirements.txt",
+    "install-requirements": "pip install -r requirements-local.txt",
     "save-requirements": "pip freeze > requirements-all.txt",
     "venv-init": "virtualenv .venv",
     "venv-activate-call": ".venv/Scripts/activate",
