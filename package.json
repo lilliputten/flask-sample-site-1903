@@ -1,0 +1,41 @@
+{
+  "name": "flask-sample-site-1903",
+  "demo-server": "http://flask-sample-site-1903.lilliputten.ru/",
+  "version": "0.0.1",
+  "author": "lilliputten <igor@lilliputten.ru>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/lilliputten/flask-sample-site-1903"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "npm-package-user-scripts-list": "^0.1.10",
+    "npm-run-all": "^4.1.5",
+    "stylelint": "^9.10.1"
+  },
+  "scripts": {
+    "[install]": "Some initial scripts",
+    "add-publish-submodule-SAMPLE": "echo --Add .publish submodule-- && ( test ! -d .publish || git rm -f .publish ) && git submodule add -f git@github.com:lilliputten/flask-sample-site-1903-build.git .publish",
+    "install-python-requirements": "npm-run-all venv-init install-requirements",
+    "postinstall": "echo --Run postinstall tasks-- && npm-run-all install-python-requirements",
+    "[python]": "Python commands...",
+    "install-requirements": "pip install -r requirements.txt",
+    "venv-init": "virtualenv .venv",
+    "venv-activate-call": ".venv/Scripts/activate",
+    "flask-server-SAMPLE": "echo --Start flask development server-- && set FLASK_ENV=development&& set FLASK_DEBUG=1&& python server.py",
+    "flask-server": "echo --Start flask development server-- && python server.py",
+    "[tests]": "Testing & linting...",
+    "stylelint": "echo --Styles linting-- && stylelint react/src/**/*.{css,pcss} --syntax scss && echo No postcss problems found",
+    "eslint": "echo --JS source code linting-- && eslint react/src --ext .js,.jsx && echo No JS problems found",
+    "lint": "echo --Lint all source code-- && npm-run-all eslint stylelint",
+    "jest": "echo --Run tests-- && jest",
+    "test": "echo --Run all lintings and tests-- && npm-run-all lint jest",
+    "[utils]": "Misc helper utils...",
+    "help": "echo --List all available script commands-- && npm-package-user-scripts-list"
+  }
+}

@@ -1,0 +1,4 @@
+flake8==3.7.7
+Flask==1.0.2
+pylint==1.9.4
+python-dotenv==0.10.1
